@@ -1,0 +1,157 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  background-color:#FDF7FF;
+}
+
+img{
+  height: 200px;
+}
+
+
+/* ==============INDEX============= */
+
+
+.jumbotron{
+  background-color: #ead3d3a1;
+}
+
+#loginTitle{
+  font-size: 50px;
+  color:#909090;
+  padding-top: 6px;
+  margin-right: 15px;
+}
+
+.indexP{
+  color: #909090;
+}
+.btn{
+  padding: 5px;
+  border: 2px solid white;
+  background: #bb9797;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #fafafa;
+  font-weight: bold;
+  height: 40px;
+  padding-top: 7px;
+}
+
+.btn:hover{
+  background: black;
+  color:white;
+}
+
+/* ==============PROFILE============= */
+
+.well{
+  background-color:#ead3d3a1;
+  border: 2px solid #c7aeae;
+}
+.mainTitle{
+  color: white;
+  font-size: 35px;
+  padding-bottom: 20px;
+}
+
+.profileTitle{
+  color: #FFF;
+  text-align: center;
+  font-size: 45px;
+  padding-left: 20px;
+}
+
+input[type="file"]{
+  display: inline;
+}
+
+input[type="submit"]{
+  padding: 5px;
+  background: #bb9797;
+  border-radius: 3px;
+  color: white;
+  border: 2px solid #c7aeae;
+
+}
+
+.logoutBtn{
+  padding: 5px;
+  border: 2px solid white;
+  background: #ffdd68;
+  border-radius: 3px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.profileHdr{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 12px double #fff;
+}
+
+.btnContainer{
+  margin: 20px;
+}
+
+/* ==============LOGIN & SIGNUP============= */
+
+.col-sm-6.col-sm-offset-3 {
+  color: #909090;
+}
+
+a {
+  color:#bb9797;
+}
+
+a:hover{
+  color:black;
+}
+
+.btn-warning {
+  color: #fff;
+  background-color:black;
+  border: none;
+}
+
+.btn-warning:hover{
+  background:#bb9797;
+}
+
+/* ==============FEED============= */
+.feedTitle{
+  text-align: center;
+}
+
+.feedUl, .profileUl{
+  list-style: none;
+}
+
+.liFeed{
+  padding-bottom: 40px;
+  padding-left: 35%;
+}
+
+.user{
+  display: block;
+  font-size: 22px;
+}
+
+/* ===============HASH==================== */
+.hashLi{
+  text-align: center;
+  list-style: none;
+}
+
+/* ===============POST ==================== */
+.postUl{
+  list-style: none;
+  text-align: center;
+}
+
+.postComment{
+  display: flex;
+  justify-content: center;
+}
