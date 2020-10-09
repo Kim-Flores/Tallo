@@ -1,0 +1,36 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  background-color:#f6faeb;
+}
+
+/* ==============SIGN UP============= */
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.btn:hover{
+  color: #176861;
+  background-color: #CDDC39;
+  border-color: #8BC34A;
+} 
+
+.btn-warning {
+  background: #83cf70;
+  color:white;
+  border-color: #8BC34A;
+}
+
+.fa{
+  color: #009688;
+}
+
+a {
+  color: #009688;
+}
+
+a:hover {
+  color: #4CAF50;
+}

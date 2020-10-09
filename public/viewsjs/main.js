@@ -1,5 +1,8 @@
+
+
 // var thumbUp = document.getElementsByClassName("fa-thumbs-up");
 var trash = document.getElementsByClassName("fa-trash");
+
 
 // Array.from(thumbUp).forEach(function(element) {
 //       element.addEventListener('click', function(){
@@ -27,21 +30,22 @@ var trash = document.getElementsByClassName("fa-trash");
 
 Array.from(trash).forEach(function(element) {
       element.addEventListener('click', function(){
-        const user = this.parentNode.parentNode.children[0].innerText
-        const comments = this.parentNode.parentNode.children[1].innerText
-        console.log(user)
-        console.log(comments)
-        fetch('/deleteComment', {
+        let userName = document.getElementById("userName").innerText;
+        let postId = this.getAttribute('name');
+        console.log(postId,'postid')
+        console.log(userName,'username')
+        fetch('/deletePost', {
           method: 'delete',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            'user': user,
-            'comments': comments
+            'user': userName,
+            'postId': postId
           })
         }).then(function (response) {
           window.location.reload()
         })
       });
 });
+

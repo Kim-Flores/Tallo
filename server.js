@@ -2,9 +2,10 @@
 
 // set up ======================================================================
 // get all the tools we need
+const fetch = require('node-fetch');
 const express  = require('express');
 const app      = express();
-const port     = process.env.PORT || 8080;
+const port     = process.env.PORT || 9000;
 const mongoose = require('mongoose');
 const passport = require('passport');
 const flash    = require('connect-flash');
@@ -49,7 +50,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 
 // routes ======================================================================
-const connect = (db) => require('./app/routes.js')(app, passport, db, multer, ObjectId); // load our routes and pass in our app and fully configured passport
+const connect = (db) => require('./app/routes.js')(app, passport, db, multer, ObjectId, fetch); // load our routes and pass in our app and fully configured passport
 
 
 // launch ======================================================================

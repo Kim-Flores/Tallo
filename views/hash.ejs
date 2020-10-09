@@ -1,13 +1,42 @@
 <%- include('header'); -%>
-<div class="page-header text-center">
-  <h1><span class="fa fa-camera-retro"></span> Hashtags</h1>
-  <a href="/profile" class="btn btn-default btn-sm">Profile</a>
-  <a class="btn btn-default btn-sm" href="/feed">Feed</a>
-  <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-</div>
-<% for(var i=0; i<posts.length; i++) {%>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container-fluid d-flex">
 
-  
+    <div class="logo mr-auto">
+      <h1 class="text-light"><a href="/"><span>Tallo</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    </div>
+
+    <nav class="nav-menu d-none d-lg-block">
+      <ul>
+        <li class="active"><a href="/">Home</a></li>
+        <li class="drop-down"><a href="/profile">Profile</a>
+          <ul>
+            <li><a href="/write">Buds</a></li>
+            <li><a href="/feed">Community</a></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+
+        <li class="get-started"><a href="/search">Explore</a></li>
+      </ul>
+    </nav><!-- .nav-menu -->
+
+  </div>
+</header><!-- End Header -->
+
+<main id="main">
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+  <div class="section-title" data-aos="fade-up">
+    <h2>Hash Tags</h2>
+    <p>Check Out Related Photos</p>
+  </div>
+<% for(var i=0; i<posts.length; i++) {%>
   <li class="hashLi">
     <a href="/post/<%= posts[i]._id%>">
       <img src="/<%= posts[i].imgPath%>">
@@ -19,6 +48,9 @@
   </li>
 
 <% } %>
-
+<a href="#" class="back-to-top" style="display: inline;"><i class="icofont-simple-up"></i></a>
+</div>
+</section>
+</main><!-- End #main -->
 
 <%- include('footer'); -%>

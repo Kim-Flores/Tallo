@@ -1,0 +1,59 @@
+<%- include('header'); -%>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container-fluid d-flex">
+  
+        <div class="logo mr-auto">
+          <h1 class="text-light"><a href="/"><span>Tallo</span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+  
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="active"><a href="/">Home</a></li>
+            <li class="drop-down"><a href="/profile">Profile</a>
+              <ul>
+                <li><a href="/write">Buds</a></li>
+                <li><a href="/feed">Community</a></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+  
+            <li class="get-started"><a href="/search">Explore</a></li>
+          </ul>
+        </nav><!-- .nav-menu -->
+  
+      </div>
+    </header><!-- End Header -->
+  <main id="main">
+    <!-- ======= Contact Us Section ======= -->
+    <section id="contact" class="contact">
+     <div class="container">
+ 
+       <div class="section-title" data-aos="fade-up">
+         <h2>Let's Explore!</h2>
+         <p>Find New Discoveries</p>
+       </div>
+       <div class="row">
+           <div class="info">
+              <!-- SEARCH FORM -->
+            <div class="postForm">
+              <form class="searchForm">
+                <input id="searchInput" type="text" placeholder="Search!" name="keyword" value="">
+                <button id="searchBtn" type="submit" value="Upload">Submit</button>
+              </form>
+            </div>
+           </div>
+         </div>
+         <section class="api">
+          <div id="items">
+              
+          </div>
+        </section>
+   </section><!-- End Contact Us Section -->
+ </main><!-- End #main -->
+ <script src="viewsjs/search.js"></script>
+<%- include('footer'); -%>

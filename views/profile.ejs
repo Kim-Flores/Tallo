@@ -1,56 +1,130 @@
 <%- include('header'); -%>
-  <div class="container">
-
-      <div class="page-header text-center">
-          <h1><span class="fa fa-camera-retro"></span> Profile Page</h1>
-          <a class="btn btn-default btn-sm" href="/feed">Feed</a>
-          <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container-fluid d-flex">
+  
+        <div class="logo mr-auto">
+          <h1 class="text-light"><a href="/"><span>Tallo</span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+  
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="active"><a href="/">Home</a></li>
+            <li class="drop-down"><a href="/profile">Profile</a>
+              <ul>
+                <li><a href="/buds">Buds</a></li>
+                <li><a href="/feed">Community</a></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+  
+            <li class="get-started"><a href="/search">Explore</a></li>
+          </ul>
+        </nav><!-- .nav-menu -->
+  
       </div>
+    </header><!-- End Header -->
 
-      <div class="row">
+  <main id="main">
+    <!-- ======= Contact Us Section ======= -->
+    <section id="contact" class="contact">
+     <div class="container">
+ 
+       <div class="section-title" data-aos="fade-up">
+         <h2>Profile</h2>
+         <p>Let's Explore!</p>
+       </div>
+ 
+       <div class="row">
+ 
+         <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+           <div class="info">
+             <div class="imgSize">
+              <img id="userProfile" src="<%= user.profileImg %>" alt=""> 
+            </div>
+             <div class="address">
+              <i class="icofont-simple-smile"></i>
+                <% if (user.local.email) { %>
+                  <h4>User Id:</h4>
+                    <p id="userName"><%= user.local.username %></p>     
+                    <% } %>
+             </div>
 
-          <!-- LOCAL INFORMATION -->
-          <div class="col-sm-6">
-              <div class="well">
-                  <h3><img src="<%= user.profileImg %>" alt=""> Profile</h3>
-
-                  <% if (user.local.email) { %>
-                      <p>
-                          <strong>id</strong>: <%= user._id %><br>
-                          <strong>email</strong>: <%= user.local.email %><br>
-                          <strong>password</strong>: <%= user.local.password %>
-                      </p>
-
-                      <a href="/unlink/local" class="btn btn-default">Unlink</a>
-                  <% } else { %>
-                      <a href="/connect/local" class="btn btn-default">Connect Local</a>
-                  <% } %>
-                  <!-- IMAGE UPLOAD -->
-                </div>
-                    <div class="postForm">
-                      <h2>Add a post</h2>
-                      <form action="/qpPost" enctype="multipart/form-data" method="post">
-                        <input type="text" placeholder="Add hashtags!" name="caption" value="">
-                        <input type="file" name="file-to-upload">
-                        <input type="submit" value="Upload">
-                      </form>
-                    </div>
-          </div>
-          <div class="col-sm-6">
-            <h3>Posts</h3>
+             <div class="email">
+               <i class="icofont-envelope"></i>
+               <h4>Email:</h4>
+               <p><%= user.local.email %></p>
+             </div>
+ 
+             <!-- <div class="phone">
+               <i class="icofont-phone"></i>
+               <h4>Password:</h4> -->
+               <!-- <p><%= user.local.password %></p> -->
+             <!-- </div> -->
+             <!-- <div> -->
+          
+              <!-- <p>Friend Requests</p>
+              <ul>
+                <% for (var i=0; i<friends.length;i++){%>
+                  <% if (!friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
+                    <p><%=friends[i].senderUsername%></p>
+                    <button data-id="<%=friends[i].sender%>" id="acceptFriend">Accept Friend Request</button>
+                 <% } else if(!friends[i].accepted){ %>
+                  <p><%=friends[i].receiverUsername%></p>
+                    <button data-id="<%=friends[i].receiver%>" id="denyFriend">Delete Friend Request</button>
+                 <% } %>
+               
+               <%}%>
+              </ul>
+                 </div>
+              <div>
+                <p>Friends List</p>
+              <ul>
+                <% for (var i=0; i<friends.length;i++){%>
+                  <% if (friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
+                    <p><%=friends[i].senderUsername%></p>
+                    <button data-id="<%=friends[i].sender%>" id="denyFriend">Remove Friend</button>
+                 <% } else if(friends[i].accepted){ %>
+                  <p><%=friends[i].receiverUsername%></p>
+                    <button data-id="<%=friends[i].receiver%>" id="denyFriend">Remove Friend</button>
+                 <% } %>
+               
+               <%}%>
+              </ul> -->
+              <!-- </div> -->
+           </div>
+         </div>
+ 
+         <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+           <div class="php-email-form scrollable">
+              <!-- IMAGE UPLOAD -->
+              <div class="postForm">
+                <form action="/qpPost" enctype="multipart/form-data" method="post">
+                  <input type="text" placeholder="Add hashtags!" name="caption" value="">
+                  <input type="file" name="file-to-upload">
+                  <input type="submit" value="Upload">
+                </form>
+              </div>
             <ul class="profileUl">
-            <% for(var i=0; i<posts.length; i++) {%>
-              <li>
-                <a href="/post/<%= posts[i]._id%>">
-                  <img src="<%= posts[i].imgPath%>">
-                </a>
-                <span class="cap"><%- posts[i].caption %></span>
-                <!-- <span><%= posts[i].likes %></span>
-                <span><i class="fa fa-heart" aria-hidden="true"></i></span> -->
-                <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-              </li>
-            <% } %>
-            </ul>
-
-  </div>
+              <% for(var i=0; i<posts.length; i++) {%>
+                <li>
+                  <a href="/post/<%= posts[i]._id%>">
+                    <img class="postW" src="<%= posts[i].imgPath%>">
+                  </a>
+                  <span class="cap"><%- posts[i].caption %></span>
+                  <!-- <span><%= posts[i].likes %></span>
+                  <span><i class="fa fa-heart" aria-hidden="true"></i></span> -->
+                  <span><i name="<%= posts[i]._id%>" class="fa fa-trash" aria-hidden="true"></i></span>
+                </li>
+              <% } %>
+              </ul>
+          </div>
+         </div>
+   </section><!-- End Contact Us Section -->
+ </main><!-- End #main -->
+ <!-- <script src='/viewsjs/profile.js'></script> -->
 <%- include('footer'); -%>

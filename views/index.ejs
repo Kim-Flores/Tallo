@@ -1,11 +1,45 @@
 <%- include('header'); -%>
-  <div class="container">
-      <div class="jumbotron text-center">
-          <h1 id='loginTitle'>Quickpound</h1>
-          <img src="img/camera.gif" alt="Quickpound Logo">
-          <p class="indexP">Login or Signup:</p>
-          <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Login</a>
-          <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>Signup</a>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container-fluid d-flex">
+  
+        <div class="logo mr-auto">
+          <h1 class="text-light"><a href="/"><span>Tallo</span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+  
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+  
+            <li class="get-started"><a href="/login">Login</a></li>
+          </ul>
+        </nav><!-- .nav-menu -->
+  
       </div>
-  </div>
+    </header><!-- End Header -->
+  
+     <!-- ======= Hero Section ======= -->
+     <section id="hero" class="d-flex align-items-center">
+  
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
+            <h1>Branch into New Roots with Tallo</h1>
+            <h2>Join the Tallo Community where we can learn and grow together. Let's explore!</h2>
+            <a href="/login" class="btn-get-started scrollto">Login</a>
+            <a href="/signup" class="btn-get-started scrollto">Signup</a>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 hero-img">
+            <img src="/img/indexImg.png" class="img-fluid animated" alt="">
+          </div>
+        </div>
+      </div>
+  
+    </section><!-- End Hero -->
+
 <%- include('footer'); -%>

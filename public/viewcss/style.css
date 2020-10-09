@@ -1,0 +1,211 @@
+body{
+  /* padding-top:80px; */
+  word-wrap:break-word;
+  background-color:#f6faeb;
+}
+
+img{
+  height: 200px;
+}
+
+
+/* ==============INDEX============= */
+
+#hero{
+  background: #f6faeb;
+  border-bottom: none;
+}
+
+#hero .btn-get-started{
+  background: #8BC34A;
+}
+
+#hero .btn-get-started:hover{
+  background:#4CAF50;
+  ;
+}
+.nav-menu .get-started a {
+  background: #4CAF50;
+}
+
+.nav-menu .get-started a:hover {
+  background: #009688;
+}
+
+.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+  color: #009688;
+  text-decoration: none;
+}
+/* ==============PROFILE============= */
+
+div.scrollable{
+  height: 434px; /* or any value */
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.postW{
+  width: 70%;
+}
+
+#userProfile{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* border-radius: 50%; */
+  padding-bottom: 15px;
+}
+.profileUl{
+  list-style: none;
+}
+
+.mainTitle{
+  color: white;
+  font-size: 35px;
+  padding-bottom: 20px;
+}
+
+.profileTitle{
+  color: #FFF;
+  text-align: center;
+  font-size: 45px;
+  padding-left: 20px;
+}
+
+input[type="file"]{
+  display: inline;
+}
+
+input[type="submit"]{
+  background: #f6a200;
+  color: white;
+  border: 2px solid #FF9800;
+
+}
+
+.profileHdr{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 12px double #fff;
+}
+
+.btnContainer{
+  margin: 20px;
+}
+
+/* ==============FEED============= */
+.feedTitle{
+  text-align: center;
+}
+
+.feedUl, .profileUl{
+  list-style: none;
+}
+
+.cap{
+  text-align: center;
+}
+
+.liFeed{
+  padding-bottom: 40px;
+  padding-left: 35%;
+}
+
+.user{
+  display: block;
+  font-size: 22px;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+  color: #009688;
+}
+
+.user {
+  display: block;
+  font-size: 22px;
+  color: #009688;
+}
+/* ===============HASH TAG PAGE==================== */
+.hashLi{
+  text-align: center;
+  list-style: none;
+}
+
+/* ===============POST & COMMENTS ==================== */
+.postUl{
+  list-style: none;
+  text-align: center;
+}
+
+.commentContainer{
+  text-align:center;
+}
+
+.trash{
+  cursor:pointer
+}
+
+a {
+  color: #8BC34A;
+}
+/* =============== CONTACT PAGE ==================== */
+.contact .php-email-form, .contact .info{
+  border-top: 3px solid #4CAF50;
+  border-bottom: 3px solid #4CAF50;
+}
+
+.contact .info i {
+  color: #4CAF50;
+  background: #ecf0be;
+}
+
+.contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
+  background: #009688;
+}
+
+.section-title p::after {
+  background: #009688;
+}
+
+.contact .php-email-form button[type="submit"]:hover {
+  background: #CDDC39;
+}
+
+.contact .php-email-form button[type="submit"] {
+  background: #8BC34A;
+}
+
+/* =============== SEARCH PAGE ==================== */
+
+.searchForm{
+  text-align: center;
+}
+
+#items{
+  text-align: center;
+}
+
+#items div{
+  padding-bottom:50px;
+}
+
+#items div img{
+  padding: 20px 67px 0 0;
+}
+
+#items a{
+  display:block;
+  color: #009688;
+}
+
+/* =============== BUDS/FRIENDS PAGE ==================== */
+.buddy, #buddyReq{
+  text-align: center;
+  color: #009688;
+  font-size: 20px;
+}
+
+#buddyReq{
+  padding: 0;
+}
