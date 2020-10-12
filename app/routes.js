@@ -98,6 +98,22 @@ app.get('/buds', isLoggedIn, function(req, res) {
 })
 });
 
+// ============FRIENDS FEED===========
+app.get('/buds', isLoggedIn, function(req, res) {
+  let uId = ObjectId(req.params.posterId)
+  console.log(uId, 'object id') 
+  db.collection('friends').find({$or:[{'sender': uId}, {'receiver': uId}]}).toArray((err, friends)  => { db.collection('posts').find({'posterId': uId}).toArray((err, result)=> {
+      console.log(friends)
+    if (err) return console.log(err)
+    res.render('buds.ejs', {
+      user : req.user,
+      posts: result
+    })
+  })
+})
+});
+// maybe add accepted true
+
 // API SEARCH PAGE =========================
 app.get('/search', function(req, res) {
   db.collection('posts').find().toArray((err, result) => {

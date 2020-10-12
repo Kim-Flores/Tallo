@@ -1,7 +1,9 @@
 body{
   padding-top:80px;
   word-wrap:break-word;
-  background-color:#f6faeb;
+  background:#f6faeb;
+  /* url("/img/flower2.gif") no-repeat center right;
+  background-size: 10%; */
 }
 
 img{
@@ -38,4 +40,10 @@ a {
 
 a:hover {
   color: #4CAF50;
+}
+
+.loginImg{
+  display: flex;
+  justify-content: end;
+  align-content: flex-end;
 }

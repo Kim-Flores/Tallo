@@ -59,43 +59,6 @@
                <h4>Email:</h4>
                <p><%= user.local.email %></p>
              </div>
- 
-             <!-- <div class="phone">
-               <i class="icofont-phone"></i>
-               <h4>Password:</h4> -->
-               <!-- <p><%= user.local.password %></p> -->
-             <!-- </div> -->
-             <!-- <div> -->
-          
-              <!-- <p>Friend Requests</p>
-              <ul>
-                <% for (var i=0; i<friends.length;i++){%>
-                  <% if (!friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
-                    <p><%=friends[i].senderUsername%></p>
-                    <button data-id="<%=friends[i].sender%>" id="acceptFriend">Accept Friend Request</button>
-                 <% } else if(!friends[i].accepted){ %>
-                  <p><%=friends[i].receiverUsername%></p>
-                    <button data-id="<%=friends[i].receiver%>" id="denyFriend">Delete Friend Request</button>
-                 <% } %>
-               
-               <%}%>
-              </ul>
-                 </div>
-              <div>
-                <p>Friends List</p>
-              <ul>
-                <% for (var i=0; i<friends.length;i++){%>
-                  <% if (friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
-                    <p><%=friends[i].senderUsername%></p>
-                    <button data-id="<%=friends[i].sender%>" id="denyFriend">Remove Friend</button>
-                 <% } else if(friends[i].accepted){ %>
-                  <p><%=friends[i].receiverUsername%></p>
-                    <button data-id="<%=friends[i].receiver%>" id="denyFriend">Remove Friend</button>
-                 <% } %>
-               
-               <%}%>
-              </ul> -->
-              <!-- </div> -->
            </div>
          </div>
  
@@ -115,10 +78,13 @@
                   <a href="/post/<%= posts[i]._id%>">
                     <img class="postW" src="<%= posts[i].imgPath%>">
                   </a>
+                <div class="capContainer">
                   <span class="cap"><%- posts[i].caption %></span>
                   <!-- <span><%= posts[i].likes %></span>
                   <span><i class="fa fa-heart" aria-hidden="true"></i></span> -->
-                  <span><i name="<%= posts[i]._id%>" class="fa fa-trash" aria-hidden="true"></i></span>
+                  
+                    <span ><i name="<%= posts[i]._id%>" class="fa fa-trash" aria-hidden="true"></i></span>
+                </div>
                 </li>
               <% } %>
               </ul>

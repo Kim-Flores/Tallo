@@ -35,7 +35,7 @@
      <div class="container">
  
        <div class="section-title" data-aos="fade-up">
-         <h2>Friend Requests</h2>
+         <h2>Bud Requests</h2>
          <p id="userName"><%= user.local.username %>, all your buds are here!</p> 
        </div>
  
@@ -43,30 +43,31 @@
          <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
            <div class="info">
             <div>
-              <p id="buddyReq">Buddy Requests</p>
-              <ul>
-                <% for (var i=0; i<friends.length;i++){%>
+              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> <!--beginning of tablist-->
+                <li class="nav-item">
+                  <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Bud Requests</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Bud List</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <ul>
+                  <% for (var i=0; i<friends.length;i++){%>
                   <% if (!friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
                     <p><%=friends[i].senderUsername%></p>
                     <button data-id="<%=friends[i].sender%>" id="acceptFriend">Accept Friend Request</button>
                  <% } else if(!friends[i].accepted){ %>
                   <p><%=friends[i].receiverUsername%></p>
-                    <button data-id="<%=friends[i].receiver%>" id="denyFriend">Delete Friend Request</button>
+                    <button data-id="<%=friends[i].receiver%>" id="denyFriend">Deny Friend Request</button>
                  <% } %>
-               <%}%>
-              </ul>
-            </div>
-           
-           </div>
-         </div>
- 
-         <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-           <div class="php-email-form scrollable">
-              <!-- IMAGE UPLOAD -->
-              <div>
-                <p class="buddy">Buddy List</p>
-              <ul>
-                <% for (var i=0; i<friends.length;i++){%>
+                <%}%>
+                </ul>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <ul>
+                  <% for (var i=0; i<friends.length;i++){%>
                   <% if (friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
                     <p><%=friends[i].senderUsername%></p>
                     <button data-id="<%=friends[i].sender%>" id="denyFriend">Remove Friend</button>
@@ -74,10 +75,42 @@
                   <p><%=friends[i].receiverUsername%></p>
                     <button data-id="<%=friends[i].receiver%>" id="denyFriend">Remove Friend</button>
                  <% } %>
-               
-               <%}%>
-              </ul>
+                  <%}%>
+                </ul>
+                </div>
+              </div> <!----end of tab thingy-->
+            </div>
+           </div>
+         </div>
+ 
+         <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+           <div class="php-email-form scrollable">
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+              <!-- <% for(var i=0; i<posts.length; i++) {%> -->
+                <% for (var i=0; i<friends.length;i++){%>
+              <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap"> -->
+                    <div>
+                      <% if (friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
+                      <a href="/profile/<%= posts[i].posterId%>">
+                        <img src="<%= posts[i].imgPath%>">
+                      </a>
+                      <span class="cap"><%- posts[i].caption %></span>
+                      <% } %>
+                    </div>
+                  <!-- <div class="portfolio-links">
+                    <a href="/profile/<%= posts[i].posterId%>" data-gall="portfolioGallery" class="venobox" title="User Details"><i class="icofont-plus-circle"></i></a>
+                    <a href="/post/<%= posts[i]._id%>" title="Comments"><i class="icofont-speech-comments"></i></a>
+                  </div>
+                  <div class="portfolio-info">
+                    <a class="user" href="/profile/<%= posts[i].posterId%>"><%= posts[i].posterUserName%>
+                    <span class="cap"><%- posts[i].caption %></span>
+                  </div> -->
+                <% } %>
+                  <!-- <% } %> -->
+                </div>
               </div>
+          </div>
           </div>
          </div>
    </section><!-- End Contact Us Section -->

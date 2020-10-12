@@ -35,9 +35,11 @@
     <h2>Welcome</h2>
     <p>This is <%= posts[0].posterUserName %>'s Profile!</p>
   </div>
+  <div class="publicUser">
   <img src="<%= posts[0].posterImg %>" alt=""> 
   <p id="friendId" data-id='<%= posts[0].posterId %>'><%= posts[0].posterUserName %></p>
   <button id="friendBtn">Add Friend</button>
+  </div>
   <!-- <ul>
   <% for(var i=0; i<posts.length; i++) {%>
     <li>
@@ -57,7 +59,7 @@
         <% for(var i=0; i<posts.length; i++) {%>
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <div class="portfolio-wrap">
-              <div>
+              <div class="imgTiles">
                 <a href="/post/<%= posts[i]._id%>">
                   <img src="../<%= posts[i].imgPath%>">
                 </a>
@@ -68,16 +70,16 @@
               <a href="/post/<%= posts[i]._id%>" title="Comments"><i class="icofont-speech-comments"></i></a>
             </div>
             <div class="portfolio-info">
-              <span><%- posts[i].caption %></span>
+              <%- posts[i].caption %>
             </div>
           </div>
         </div>
         <% } %>
     </div>
   </section><!-- End Portfolio Section -->
-  <a href="/profile">Return to Profile</a>
-  <a href="/feed">Return to Feed</a>
 </div>
+
+<a href="#" class="back-to-top" style="display: inline;"><i class="icofont-simple-up"></i></a>
 </main>
 </section>
 <script src='/viewsjs/publicProfile.js'></script>

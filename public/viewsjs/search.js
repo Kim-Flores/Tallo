@@ -26,14 +26,16 @@ searchBtn.addEventListener('click',(event) =>{
           let animalImg, animalImg2;
           let wiki = element.record.wikipedia_url
           let div = document.createElement('div')
-          let nameText = document.createTextNode(name)
-          let commonNameTxt = document.createTextNode(commonName)
-          div.appendChild(nameText)
-          div.appendChild(commonNameTxt)
+          let p1 = document.createElement('p')
+          let p2 = document.createElement('p')
+          p1.innerHTML = `Common Name: ${commonName}`;
+          p2.innerHTML = `Scientific Name: ${name}`;
+          div.appendChild(p1).classList.add("commonName")
+          div.appendChild(p2).classList.add("animalName")
           let wikiLink = document.createElement('a')
           wikiLink.href = wiki
-          wikiLink.innerHTML = wiki
-          div.appendChild(wikiLink)
+          wikiLink.innerHTML = `Learn more about the ${commonName}`
+          div.appendChild(wikiLink).classList.add("searchLinks")
           if(!element.record.taxon_photos){
             animalImg = "Image not available"
             animalImg2 = "Image not available"
