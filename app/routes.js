@@ -104,7 +104,7 @@ app.get('/buds', isLoggedIn, function(req, res) {
         if (err) return console.log(err)
         res.render('buds.ejs', {
         user : req.user,
-        posts: result,
+        posts: friendsFeed,
         friends: friends
   })
 
