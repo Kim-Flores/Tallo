@@ -110,6 +110,15 @@ input[type="submit"]{
 .capContainer{
   display: flex;
   justify-content: center;
+  padding: 20px;
+}
+
+.cap{
+  padding-right: 20px;
+}
+
+span .fa{
+  color: #009688;
 }
 
 /* ==============PUBLIC PROFILE============= */
@@ -359,4 +368,8 @@ a {
 
 #buddyReq{
   padding: 0;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: #8BC34A;
 }

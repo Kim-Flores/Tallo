@@ -85,34 +85,36 @@ app.get('/feed', function(req, res) {
 // BUDS PAGE =========================
 app.get('/buds', isLoggedIn, function(req, res) {
   let uId = ObjectId(req.session.passport.user)
-  db.collection('posts').find({'posterId': uId}).toArray((err, result) => {
-    db.collection('friends').find({$or:[{'sender': uId}, {'receiver': uId}]}).toArray((err, friends) => {
-      console.log(friends)
-    if (err) return console.log(err)
-    res.render('buds.ejs', {
-      user : req.user,
-      posts: result,
-      friends: friends
+  db.collection('friends').find({$or:[{'sender': uId}, {'receiver': uId}]}).toArray((err, friends)  => {
+    console.log(friends)
+    let friendsList = friends.map(element => {
+      let friend = element.receiverUsername == req.user.local.username ? element.senderUsername : element.receiverUsername
+      return friend
     })
+      db.collection('posts').find().toArray((err, friendsFeed)  => {
+        console.log(friendsFeed)
+        let friendsPost = friendsFeed.filter(feed => {
+          if(friendsList.includes(feed.posterUserName)){
+            return true;
+          }else{
+            false;
+          }
+        })
+        console.log(friendsPost, 'friends only')
+        if (err) return console.log(err)
+        res.render('buds.ejs', {
+        user : req.user,
+        posts: result,
+        friends: friends
   })
+
+      })
+      })
 })
-});
+  
 
 // ============FRIENDS FEED===========
-app.get('/buds', isLoggedIn, function(req, res) {
-  let uId = ObjectId(req.params.posterId)
-  console.log(uId, 'object id') 
-  db.collection('friends').find({$or:[{'sender': uId}, {'receiver': uId}]}).toArray((err, friends)  => { db.collection('posts').find({'posterId': uId}).toArray((err, result)=> {
-      console.log(friends)
-    if (err) return console.log(err)
-    res.render('buds.ejs', {
-      user : req.user,
-      posts: result
-    })
-  })
-})
-});
-// maybe add accepted true
+
 
 // API SEARCH PAGE =========================
 app.get('/search', function(req, res) {
@@ -128,6 +130,7 @@ app.get('/search', function(req, res) {
 // API SEARCH Results =========================
 app.post('/searchResult', function(req, res) {
   let keyword= req.body.keyword
+  if (keyword.length < 1)res.send({status:'failure'})
   console.log(keyword)
   const url = `https://api.inaturalist.org/v1/search?q=${keyword}&per_page=100`;
   const getData = async url => {

@@ -35,7 +35,7 @@
      <div class="container">
  
        <div class="section-title" data-aos="fade-up">
-         <h2>Bud Requests</h2>
+         <h2>Bud Activity</h2>
          <p id="userName"><%= user.local.username %>, all your buds are here!</p> 
        </div>
  
@@ -87,16 +87,16 @@
            <div class="php-email-form scrollable">
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
               <!-- <% for(var i=0; i<posts.length; i++) {%> -->
-                <% for (var i=0; i<friends.length;i++){%>
+                <% for (var i=0; i<posts.length;i++){%>
               <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap"> -->
                     <div>
-                      <% if (friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
+                     
                       <a href="/profile/<%= posts[i].posterId%>">
                         <img src="<%= posts[i].imgPath%>">
                       </a>
                       <span class="cap"><%- posts[i].caption %></span>
-                      <% } %>
+                     
                     </div>
                   <!-- <div class="portfolio-links">
                     <a href="/profile/<%= posts[i].posterId%>" data-gall="portfolioGallery" class="venobox" title="User Details"><i class="icofont-plus-circle"></i></a>

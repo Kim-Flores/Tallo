@@ -17,10 +17,21 @@ searchBtn.addEventListener('click',(event) =>{
       })
       .then(data => {
         let element = items;
+        console.log(data)
         while (items.firstChild) {
         element.removeChild(items.firstChild);
 }
-        data.results.forEach((element,index) => {
+        if (data.status == 'failure'){
+          items.innerHTML = "Please enter valid search"
+          return
+        }
+        let filterData = data.results.filter(data => data.record.preferred_common_name ? true : false)
+        if(filterData.length < 1){
+          items.innerHTML = "0 search results :("
+          return ""
+        }
+        console.log(filterData)
+        filterData.forEach((element,index) => {
           let name = element.record.name
           let commonName = element.record.preferred_common_name
           let animalImg, animalImg2;
