@@ -251,6 +251,8 @@ span .fa{
 .commenter{
   color: #009688;
   font-weight: bold;
+  padding-top: 2px;
+  padding-left: 110px;
 }
 
 .commentBtn{
@@ -281,8 +283,8 @@ span .fa{
 }
 
 .speechBubble{
-  background-color: #cacacaa1;
-  border: 3px solid #dcdcdc;
+  background-color:#e7e7e7a1;
+  border: 3px solid #dededea1;
   padding: 15px;
   border-radius: 20px;
   position: relative;
@@ -292,7 +294,7 @@ span .fa{
 
 .bubbleArrow{
   border-left: 21px solid transparent;
-  border-top: 20px solid #cacacaa1;
+  border-top: 20px solid #dededea1;
   /* border: 1px solid black; */
   bottom: -23px;
   position: absolute;
