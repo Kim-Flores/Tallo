@@ -4,9 +4,9 @@
       <div class="container-fluid d-flex">
   
         <div class="logo mr-auto">
-          <h1 class="text-light"><a href="/"><span>Tallo</span></a></h1>
+          <!-- <h1 class="text-light"><a href="/"><span>Tallo</span></a></h1> -->
           <!-- Uncomment below if you prefer to use an image logo -->
-          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+          <a href="/"><img src="/img/talloLogo.png" alt="" class="img-fluid"></a>
         </div>
   
         <nav class="nav-menu d-none d-lg-block">
@@ -41,7 +41,7 @@
  
        <div class="row">
          <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-           <div class="info">
+           <div class="info scrollableList">
             <div>
               <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> <!--beginning of tablist-->
                 <li class="nav-item">
@@ -57,23 +57,24 @@
                   <% for (var i=0; i<friends.length;i++){%>
                   <% if (!friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
                     <p><%=friends[i].senderUsername%></p>
-                    <button data-id="<%=friends[i].sender%>" id="acceptFriend">Accept Friend Request</button>
+                    <button class="acceptBud" data-id="<%=friends[i].sender%>" id="acceptFriend">Accept Request</button>
                  <% } else if(!friends[i].accepted){ %>
                   <p><%=friends[i].receiverUsername%></p>
-                    <button data-id="<%=friends[i].receiver%>" id="denyFriend">Deny Friend Request</button>
+                    <button class="delBud" data-id="<%=friends[i].receiver%>" id="denyFriend">Deny Request</button>
                  <% } %>
                 <%}%>
                 </ul>
                 </div>
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                  <ul>
+                  <ul id="buddyList">
                   <% for (var i=0; i<friends.length;i++){%>
                   <% if (friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
-                    <p><%=friends[i].senderUsername%></p>
-                    <button data-id="<%=friends[i].sender%>" id="denyFriend">Remove Friend</button>
+                    <p class="friendsName"><%=friends[i].senderUsername%></p>
+                    <button class="delBud" data-id="<%=friends[i].sender%>" id="denyFriend">Remove</button>
+                    <!-- <i class="icofont-worried"></i> -->
                  <% } else if(friends[i].accepted){ %>
-                  <p><%=friends[i].receiverUsername%></p>
-                    <button data-id="<%=friends[i].receiver%>" id="denyFriend">Remove Friend</button>
+                  <p class="friendsName"><%=friends[i].receiverUsername%></p>
+                    <button class="delBud" data-id="<%=friends[i].receiver%>" id="denyFriend">Remove</button>
                  <% } %>
                   <%}%>
                 </ul>
@@ -86,30 +87,20 @@
          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
            <div class="php-email-form scrollable">
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-              <!-- <% for(var i=0; i<posts.length; i++) {%> -->
                 <% for (var i=0; i<posts.length;i++){%>
-              <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-wrap"> -->
-                    <div>
-                     
+                    <div id="topJump">
+                      <a class="hashUser" href="/profile/<%= posts[i].posterId%>"><%= posts[i].posterUserName%></a>
                       <a href="/profile/<%= posts[i].posterId%>">
-                        <img src="<%= posts[i].imgPath%>">
+                        <img class="postW" src="<%= posts[i].imgPath%>">
                       </a>
-                      <span class="cap"><%- posts[i].caption %></span>
+                      <span class="budsCap"><%- posts[i].caption %></span>
                      
                     </div>
-                  <!-- <div class="portfolio-links">
-                    <a href="/profile/<%= posts[i].posterId%>" data-gall="portfolioGallery" class="venobox" title="User Details"><i class="icofont-plus-circle"></i></a>
-                    <a href="/post/<%= posts[i]._id%>" title="Comments"><i class="icofont-speech-comments"></i></a>
-                  </div>
-                  <div class="portfolio-info">
-                    <a class="user" href="/profile/<%= posts[i].posterId%>"><%= posts[i].posterUserName%>
-                    <span class="cap"><%- posts[i].caption %></span>
-                  </div> -->
+            
                 <% } %>
-                  <!-- <% } %> -->
-                </div>
               </div>
+              <p class="jump"><a href="#topJump">Jump</a></p>
+            </div>
           </div>
           </div>
          </div>

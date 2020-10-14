@@ -4,9 +4,9 @@
   <div class="container-fluid d-flex">
 
     <div class="logo mr-auto">
-      <h1 class="text-light"><a href="/"><span>Tallo</span></a></h1>
+      <!-- <h1 class="text-light"><a href="/"><span>Tallo</span></a></h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <a href="/"><img src="/img/talloLogo.png" alt="" class="img-fluid"></a>
     </div>
 
     <nav class="nav-menu d-none d-lg-block">
@@ -63,14 +63,14 @@
                 <a href="/post/<%= posts[i]._id%>">
                   <img src="../<%= posts[i].imgPath%>">
                 </a>
-                <span><%- posts[i].caption %></span>
+                <div><%- posts[i].caption %></div>
               </div>
            
             <div class="portfolio-links">
               <a href="/post/<%= posts[i]._id%>" title="Comments"><i class="icofont-speech-comments"></i></a>
             </div>
             <div class="portfolio-info">
-              <%- posts[i].caption %>
+              <div class="cap"><%- posts[i].caption %></div>
             </div>
           </div>
         </div>

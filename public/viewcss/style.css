@@ -1,13 +1,28 @@
 body{
+  font-family: 'Sanchez', serif;
   /* padding-top:80px; */
   word-wrap:break-word;
   background-color:#f6faeb;
+}
+
+.nav-menu a {
+  letter-spacing: 2px;
+  font-family: 'Sanchez', serif;
+}
+
+h1, h2, h3, h4, h5, h6, .font-primary, #hero .btn-get-started{
+  font-family: 'Sanchez', serif;
 }
 
 img{
   height: 200px;
 }
 
+/* ==============ANCHOR TAG JUMP============= */
+
+.jump{
+  text-align: end;
+}
 .back-to-top {
   background: #CDDC39;
 }
@@ -20,6 +35,45 @@ img{
 .section-title h2 {
   color: #b5d7b6;
 }
+
+/* ==============IMG TILES SHADING============= */
+
+.portfolio .portfolio-wrap::before {
+  background: rgb(80 111 108 / 60%);
+}
+
+/* ==============SCROLL BAR============= */
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #dae7b4;
+}
+
+
+/* ==============ABOUT PAGE============= */
+
+.img-fluid {
+  max-width: 130%;
+}
+
+.about{
+  padding: 130px 0;
+}
+
 /* ==============INDEX============= */
 
 #hero{
@@ -47,6 +101,11 @@ img{
   color: #009688;
   text-decoration: none;
 }
+
+.logoSize{
+  max-height: 65px;
+}
+
 /* ==============PROFILE============= */
 
 div.scrollable{
@@ -56,9 +115,10 @@ div.scrollable{
 }
 
 .postW{
-  width: 70%;
+  width: 65%;
   display: block;
   margin: auto;
+  border-radius: 4px;
 }
 
 #userProfile{
@@ -113,8 +173,21 @@ input[type="submit"]{
   padding: 20px;
 }
 
+.capMain{
+  text-align: center;
+}
+
 .cap{
   padding-right: 20px;
+}
+
+.cap a{
+  color:#FFC107;
+  font-weight: bold;
+}
+
+.cap a:hover{
+  color:#ff9800;
 }
 
 span .fa{
@@ -122,25 +195,32 @@ span .fa{
 }
 
 /* ==============PUBLIC PROFILE============= */
+
+#uploadPad{
+  padding: 5px 0 0 0;
+}
+
 .publicUser{
   display: block;
   text-align: center;
   }
 
+#friendId{
+  font-size: 25px;
+  padding-top: 10px;
+}
 #friendBtn{
-  height: 40px;
-  border-radius: 11px;
-  background: #009688;
-  color: white;
+  height: 35px;
+  background: #FF9800;
+  border: 2px solid #df911e;
+  border-radius: 4px;
+  color: #FFF;
   font-weight: bold;
-  border: 3px solid #06685f;
 }
 
 #friendBtn:hover{
-  background: green;
-  color: white;
-  font-weight: bold;
-  border: 3px solid #06685f;
+  background: #FFC107;
+  border: 2px solid #f1c132;
 }
 
 .imgTiles p{
@@ -151,6 +231,10 @@ span .fa{
 .imgTiles{
   display: block;
   text-align: center;
+}
+
+.imgTiles img{
+  border-radius: 6px;
 }
 
 .commentContainer {
@@ -185,6 +269,35 @@ span .fa{
 .postUl img{
   border-radius: 3px;
 }
+
+.postForm{
+  position: absolute;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 79%;
+}
+
+.speechBubble{
+  background-color: #cacacaa1;
+  border: 3px solid #dcdcdc;
+  padding: 15px;
+  border-radius: 20px;
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+
+.bubbleArrow{
+  border-left: 21px solid transparent;
+  border-top: 20px solid #cacacaa1;
+  /* border: 1px solid black; */
+  bottom: -23px;
+  position: absolute;
+}
+
 /* ==============FEED============= */
 .feedTitle{
   text-align: center;
@@ -203,19 +316,14 @@ span .fa{
   padding-left: 35%;
 }
 
-.user{
-  display: block;
-  font-size: 22px;
-}
-
 .portfolio .portfolio-wrap .portfolio-links a {
   color: #009688;
 }
 
-.user {
+.user{
   display: block;
   font-size: 22px;
-  color: #009688;
+  color: #FF9800;
 }
 /* ===============HASH TAG PAGE==================== */
 .hashLi{
@@ -234,6 +342,13 @@ span .fa{
   letter-spacing: 1px;
   padding-top: 10px;
 
+}
+
+.hashUser{
+  display: block;
+  font-size: 22px;
+  color: #009688;
+  text-align: center;
 }
 /* ===============POST & COMMENTS ==================== */
 .postUl{
@@ -298,8 +413,9 @@ a {
 }
 
 #items div img{
-  padding: 20px 45px 0 0;
-  padding-top: 38px;
+    margin: 20px;
+    border-radius: 5px;
+    border: 6px solid #8bc34a45;
 }
 
 #items a{
@@ -372,4 +488,39 @@ a {
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
   background-color: #8BC34A;
+}
+
+.budsPics{
+  width: 65%;
+  display: block;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.user, .budsCap{
+  text-align: center;
+}
+
+.budsCap p{
+  padding-top: 20px;
+}
+
+#buddyList p{
+  padding: 0;
+  margin-top: 20px;
+}
+
+.delBud{
+    font-size: 15px;
+    background: #FF5722;
+    color: white;
+    font-weight: bold;
+    height: 35px;
+    border-radius: 5px;
+    border: 2px solid #d74618;
+}
+/* check to see if it works */
+.scrollableList{
+  overflow: auto;
+  white-space: nowrap;
 }

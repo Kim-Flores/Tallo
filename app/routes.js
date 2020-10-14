@@ -82,17 +82,17 @@ app.get('/feed', function(req, res) {
     })
 });
 
-// BUDS PAGE =========================
+//========================= FRIENDS FEED =========================
 app.get('/buds', isLoggedIn, function(req, res) {
   let uId = ObjectId(req.session.passport.user)
   db.collection('friends').find({$or:[{'sender': uId}, {'receiver': uId}]}).toArray((err, friends)  => {
-    console.log(friends)
+    console.log(friends,'friends: just my friends')
     let friendsList = friends.map(element => {
       let friend = element.receiverUsername == req.user.local.username ? element.senderUsername : element.receiverUsername
       return friend
     })
       db.collection('posts').find().toArray((err, friendsFeed)  => {
-        console.log(friendsFeed)
+        console.log(friendsFeed,'friendsFeed')
         let friendsPost = friendsFeed.filter(feed => {
           if(friendsList.includes(feed.posterUserName)){
             return true;
@@ -100,20 +100,17 @@ app.get('/buds', isLoggedIn, function(req, res) {
             false;
           }
         })
-        console.log(friendsPost, 'friends only')
+        console.log(friendsPost, 'friendsPost:friends only')
         if (err) return console.log(err)
         res.render('buds.ejs', {
         user : req.user,
-        posts: friendsFeed,
-        friends: friends
+        friends: friends,
+        posts: friendsPost
   })
 
       })
       })
 })
-  
-
-// ============FRIENDS FEED===========
 
 
 // API SEARCH PAGE =========================

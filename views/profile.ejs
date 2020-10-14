@@ -4,9 +4,9 @@
       <div class="container-fluid d-flex">
   
         <div class="logo mr-auto">
-          <h1 class="text-light"><a href="/"><span>Tallo</span></a></h1>
+          <!-- <h1 class="text-light"><a href="/"><span>Tallo</span></a></h1> -->
           <!-- Uncomment below if you prefer to use an image logo -->
-          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+          <a href="/"><img src="/img/talloLogo.png" alt="" class="img-fluid"></a>
         </div>
   
         <nav class="nav-menu d-none d-lg-block">
@@ -63,7 +63,7 @@
          </div>
  
          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-           <div class="php-email-form scrollable">
+           <div id="uploadPad" class="php-email-form scrollable">
               <!-- IMAGE UPLOAD -->
               <div class="postForm">
                 <form action="/qpPost" enctype="multipart/form-data" method="post">
@@ -72,7 +72,7 @@
                   <input type="submit" value="Upload">
                 </form>
               </div>
-            <ul class="profileUl">
+            <ul id="topJump" class="profileUl">
               <% for(var i=0; i<posts.length; i++) {%>
                 <li>
                   <a href="/post/<%= posts[i]._id%>">
@@ -87,6 +87,7 @@
                 </div>
                 </li>
               <% } %>
+              <p class="jump"><a href="#topJump">Jump</a></p>
               </ul>
           </div>
          </div>
