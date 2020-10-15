@@ -91,6 +91,7 @@ app.get('/buds', isLoggedIn, function(req, res) {
       let friend = element.receiverUsername == req.user.local.username ? element.senderUsername : element.receiverUsername
       return friend
     })
+    console.log(friends,'friends')
       db.collection('posts').find().toArray((err, friendsFeed)  => {
         console.log(friendsFeed,'friendsFeed')
         let friendsPost = friendsFeed.filter(feed => {
@@ -101,11 +102,12 @@ app.get('/buds', isLoggedIn, function(req, res) {
           }
         })
         console.log(friendsPost, 'friendsPost:friends only')
+        console.log(friendsList, 'friends list')
         if (err) return console.log(err)
         res.render('buds.ejs', {
         user : req.user,
         friends: friends,
-        posts: friendsPost
+        posts: friendsFeed
   })
 
       })

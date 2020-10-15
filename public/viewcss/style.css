@@ -25,6 +25,12 @@ section{
   color: #4e4039;
 }
 
+.mobile-nav .get-started a:hover {
+  background:#4caf50;
+  color: #ffffff;
+}
+
+
 /* ==============ANCHOR TAG JUMP============= */
 
 .jump{
@@ -164,6 +170,7 @@ div.scrollable{
 
 .profileUl{
   list-style: none;
+  padding-inline-start: 0;
 }
 
 .mainTitle{
@@ -491,6 +498,7 @@ a {
 }
 
 #items div img{
+    width: 25%;
     margin: 20px;
     border-radius: 5px;
     border: 6px solid #8bc34a45;

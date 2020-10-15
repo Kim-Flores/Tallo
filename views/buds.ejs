@@ -76,6 +76,7 @@
                     <button class="delBud" data-id="<%=friends[i].sender%>" id="denyFriend">Remove</button>
               
                  <% } else if(friends[i].accepted){ %>
+                  <p><%=friends[i].senderUsername%></p>
                   <p class="friendsName"><%=friends[i].receiverUsername%></p>
                     <button class="delBud" data-id="<%=friends[i].receiver%>" id="denyFriend">Remove</button>
                  <% } %>
@@ -90,7 +91,7 @@
          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
            <div class="php-email-form scrollable">
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                <% for (var i=0; i<posts.length;i++){%>
+                <% for (var i=1; i<posts.length;i++){%>
                     <div id="topJump">
                       <a class="hashUser" href="/profile/<%= posts[i].posterId%>"><%= posts[i].posterUserName%></a>
                       <a href="/profile/<%= posts[i].posterId%>">

@@ -1,8 +1,6 @@
 
 let acceptFriend = document.getElementById('acceptFriend')
 let denyFriend = document.getElementById('denyFriend')
-// let removeFriend = document.getElementById('removeFriend')
-// let removeFriend2 = document.getElementById('removeFriend')
 if(acceptFriend){
       acceptFriend.addEventListener('click',(event) =>{
         event.preventDefault()
