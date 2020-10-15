@@ -1,4 +1,5 @@
 <%- include('header'); -%>
+
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
       <div class="container-fluid d-flex">
@@ -59,6 +60,7 @@
                   <% if (!friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
                     <p><%=friends[i].senderUsername%></p>
                     <button class="acceptBud" data-id="<%=friends[i].sender%>" id="acceptFriend">Accept Request</button>
+                    <button class="delBud" data-id="<%=friends[i].receiver%>" id="denyFriend">Deny Request</button>
                  <% } else if(!friends[i].accepted){ %>
                   <p><%=friends[i].receiverUsername%></p>
                     <button class="delBud" data-id="<%=friends[i].receiver%>" id="denyFriend">Deny Request</button>
@@ -72,7 +74,7 @@
                   <% if (friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
                     <p class="friendsName"><%=friends[i].senderUsername%></p>
                     <button class="delBud" data-id="<%=friends[i].sender%>" id="denyFriend">Remove</button>
-                    <!-- <i class="icofont-worried"></i> -->
+              
                  <% } else if(friends[i].accepted){ %>
                   <p class="friendsName"><%=friends[i].receiverUsername%></p>
                     <button class="delBud" data-id="<%=friends[i].receiver%>" id="denyFriend">Remove</button>

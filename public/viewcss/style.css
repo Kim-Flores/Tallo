@@ -14,13 +14,17 @@ h1, h2, h3, h4, h5, h6, .font-primary, #hero .btn-get-started{
   font-family: 'Sanchez', serif;
 }
 
-/* img{
-  height: 200px;
-} */
 
 section{
   padding: 37px 0;
 }
+/* ==============MIN MENU============= */
+
+.mobile-nav .get-started a {
+  background: #CDDC39;
+  color: #4e4039;
+}
+
 /* ==============ANCHOR TAG JUMP============= */
 
 .jump{
@@ -314,8 +318,7 @@ textarea{
 .commenter{
   color: #009688;
   font-weight: bold;
-  padding-top: 2px;
-  padding-left: 115px;
+  padding-top: 17px;
 }
 
 .commentBtn{
@@ -587,12 +590,22 @@ a {
 
 .delBud{
     font-size: 15px;
-    background: #FF5722;
+    background: #e75c30;
     color: white;
     font-weight: bold;
     height: 35px;
     border-radius: 5px;
     border: 2px solid #d74618;
+}
+
+.acceptBud{
+  font-size: 15px;
+    background: #56d286;
+    color: white;
+    font-weight: bold;
+    height: 35px;
+    border-radius: 5px;
+    border: 2px solid #18d761;
 }
 /* check to see if it works */
 .scrollableList{

@@ -160,14 +160,14 @@ app.get('/post/:zebra', function(req, res) {
     let postId = ObjectId(req.params.zebra)
     // console.log(postId);
     db.collection('posts').find({
-      _id: postId
+      _id: postId,  
     }).toArray((err, result) => {
 
       if (err) return console.log(err)
       db.collection('comments').find({
-        posterId:postId
+        posterId:postId,
       }).toArray((err,result2) =>{
-        res.render('post.ejs',{
+        res.render('post.ejs',{    
           user:req.user,
           posts:result,
           comments:result2
@@ -183,6 +183,7 @@ app.post('/comment/:cat',(req,res) =>{
   let postId=ObjectId(req.params.cat)
   db.collection('comments').save({
     user:req.user.local.email,
+    username:req.user.local.username,
     posterId:postId,
     comments:req.body.comment
   },(err,result)=>{
@@ -236,7 +237,7 @@ app.put('/acceptfriend', (req, res) => {
     res.send('success')
   })
 })
-  // DELETE FRIENDS
+  //================= DELETE FRIENDS==================
   // {$or:[{'sender': uId}, {'receiver': uId}]}
 app.delete('/deletefriend', (req, res) => {
   db.collection('friends').findOneAndDelete({
@@ -256,7 +257,7 @@ app.delete('/deletefriend', (req, res) => {
   })
 })
 
-//Create Post =========================================================================
+//================================= CREATE POST ================================
 app.post('/qpPost', upload.single('file-to-upload'), (req, res, next) => {
   let uId = ObjectId(req.session.passport.user)
   let word = req.body.caption
