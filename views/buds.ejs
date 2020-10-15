@@ -43,16 +43,17 @@
          <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
            <div class="info scrollableList">
             <div>
-              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> <!--beginning of tablist-->
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item"> <!--beginning of tablist-->
                 <li class="nav-item">
-                  <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Bud Requests</a>
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bud Requests</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Bud List</a>
+                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Bud List</a>
                 </li>
               </ul>
-              <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                   <ul>
                   <% for (var i=0; i<friends.length;i++){%>
                   <% if (!friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
@@ -65,7 +66,7 @@
                 <%}%>
                 </ul>
                 </div>
-                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                   <ul id="buddyList">
                   <% for (var i=0; i<friends.length;i++){%>
                   <% if (friends[i].accepted && friends[i].receiver.toString() === user._id.toString() ) { %>
@@ -99,7 +100,7 @@
             
                 <% } %>
               </div>
-              <p class="jump"><a href="#topJump">Jump</a></p>
+              <p class="jump"><a href="#topJump"><img src="img/bird4.gif" alt=""></a></p>
             </div>
           </div>
           </div>

@@ -14,15 +14,27 @@ h1, h2, h3, h4, h5, h6, .font-primary, #hero .btn-get-started{
   font-family: 'Sanchez', serif;
 }
 
-img{
+/* img{
   height: 200px;
-}
+} */
 
+section{
+  padding: 37px 0;
+}
 /* ==============ANCHOR TAG JUMP============= */
 
 .jump{
   text-align: end;
 }
+
+.jump img{
+  width: 92px;
+  transform: scaleX(-1);
+  position: fixed;
+  top: 83%;
+  right: 210px;
+}
+
 .back-to-top {
   background: #CDDC39;
 }
@@ -36,6 +48,9 @@ img{
   color: #b5d7b6;
 }
 
+.section-title{
+  padding-bottom: 28px;
+}
 /* ==============IMG TILES SHADING============= */
 
 .portfolio .portfolio-wrap::before {
@@ -109,7 +124,7 @@ img{
 /* ==============PROFILE============= */
 
 div.scrollable{
-  height: 434px; /* or any value */
+  height: 452px; /* or any value */
   overflow: auto;
   white-space: nowrap;
 }
@@ -128,6 +143,21 @@ div.scrollable{
   /* border-radius: 50%; */
   padding-bottom: 15px;
 }
+
+.imgSize{
+  margin-top: 25px;
+}
+
+.imgSize img, .publicUser img{
+  height: 150px;
+}
+
+.flower{
+  width: 27%;
+  display: block;
+  margin: 12px auto;
+}
+
 .profileUl{
   list-style: none;
 }
@@ -181,8 +211,13 @@ input[type="submit"]{
   padding-right: 20px;
 }
 
-.cap a{
+.cap a, .capProfile a{
   color:#FFC107;
+  font-weight: bold;
+}
+
+.capProfile a {
+  color: #8BC34A;
   font-weight: bold;
 }
 
@@ -194,10 +229,37 @@ span .fa{
   color: #009688;
 }
 
+textarea{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  overflow: revert;
+  resize: none;
+  border: 2px solid #8BC34A;
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.btn-outline-secondary{
+  background: #4CAF50;
+  color: #FFF;
+  border: 1px solid #009688;
+}
+
+.custom-file-label {
+  color: #4e4039;
+  border: 1px solid #8BC34A;
+}
+
+.custom-file-label::after {
+  color:#4e4039;
+  background-color: #d7edbe;
+}
 /* ==============PUBLIC PROFILE============= */
 
 #uploadPad{
-  padding: 5px 0 0 0;
+  padding: 40px 0 0 0;
 }
 
 .publicUser{
@@ -235,6 +297,7 @@ span .fa{
 
 .imgTiles img{
   border-radius: 6px;
+ height: 220px;
 }
 
 .commentContainer {
@@ -252,7 +315,7 @@ span .fa{
   color: #009688;
   font-weight: bold;
   padding-top: 2px;
-  padding-left: 110px;
+  padding-left: 115px;
 }
 
 .commentBtn{
@@ -270,6 +333,7 @@ span .fa{
 
 .postUl img{
   border-radius: 3px;
+  width: 35%;
 }
 
 .postForm{
@@ -337,6 +401,7 @@ span .fa{
 .hashLi img{
   margin: 8px;
   border-radius: 3px;
+  width: 35%;
 }
 
 .hashLi span p{
@@ -351,6 +416,14 @@ span .fa{
   font-size: 22px;
   color: #009688;
   text-align: center;
+}
+
+.butterfly{
+  position: fixed;
+  transform: scaleX(-1);
+  width: 17%;
+  left: 15px;
+  bottom: 15px;
 }
 /* ===============POST & COMMENTS ==================== */
 .postUl{
