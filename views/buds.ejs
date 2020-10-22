@@ -76,7 +76,6 @@
                     <button class="delBud" data-id="<%=friends[i].sender%>" id="denyFriend">Remove</button>
               
                  <% } else if(friends[i].accepted){ %>
-                  <p><%=friends[i].senderUsername%></p>
                   <p class="friendsName"><%=friends[i].receiverUsername%></p>
                     <button class="delBud" data-id="<%=friends[i].receiver%>" id="denyFriend">Remove</button>
                  <% } %>
@@ -91,17 +90,21 @@
          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
            <div class="php-email-form scrollable">
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                <% for (var i=1; i<posts.length;i++){%>
+              <% for (var i=0; i<friends.length;i++){%>
+                <% for (var j=0; j<posts.length;j++){%>
+                  <% if (friends[i].accepted && friends[i].receiverUsername.toString() == posts[j].posterUserName || 
+                  friends[i].accepted && friends[i].senderUsername.toString() === posts[j].posterUserName){ %>
                     <div id="topJump">
-                      <a class="hashUser" href="/profile/<%= posts[i].posterId%>"><%= posts[i].posterUserName%></a>
-                      <a href="/profile/<%= posts[i].posterId%>">
-                        <img class="postW" src="<%= posts[i].imgPath%>">
+                      <a class="hashUser" href="/profile/<%= posts[j].posterId%>"><%= posts[j].posterUserName%></a>
+                      <a href="/profile/<%= posts[j].posterId%>">
+                        <img class="postW" src="<%= posts[j].imgPath%>">
                       </a>
-                      <span class="budsCap"><%- posts[i].caption %></span>
-                     
+                      <span class="budsCap"><%- posts[j].caption %></span> 
                     </div>
-            
-                <% } %>
+                    <% } %>
+                    <% } %>
+                    <% } %>
+                
               </div>
               <p class="jump"><a href="#topJump"><img src="img/bird4.gif" alt=""></a></p>
             </div>

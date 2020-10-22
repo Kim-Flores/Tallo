@@ -1,8 +1,10 @@
 
-let acceptFriend = document.getElementById('acceptFriend')
-let denyFriend = document.getElementById('denyFriend')
+let acceptFriend = document.getElementsByClassName('acceptBud')
+let denyFriend = document.getElementsByClassName('delBud')
+
 if(acceptFriend){
-      acceptFriend.addEventListener('click',(event) =>{
+  Array.from(acceptFriend).forEach(function(element) {
+      element.addEventListener('click',(event) =>{
         event.preventDefault()
         let senderId = event.target.dataset.id
         console.log(senderId)
@@ -14,9 +16,11 @@ if(acceptFriend){
             })
           }).then(res => window.location.reload(true))
           })
-        }
+        });
+      }
         if(denyFriend){
-      denyFriend.addEventListener('click',(event) =>{
+      Array.from(denyFriend).forEach(function(element) {
+      element.addEventListener('click',(event) =>{
         event.preventDefault()
         let friendId = event.target.dataset.id
         console.log(friendId)
@@ -28,4 +32,5 @@ if(acceptFriend){
                 })
               }).then(res => window.location.reload(true))
               })
-            }
+            });
+        };
