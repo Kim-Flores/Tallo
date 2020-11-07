@@ -1,13 +1,26 @@
-## Installation
+# Tallo: Cultivating Community application
 
-1. Clone repo
-2. run `npm install`
+Live Code: https://tallo.herokuapp.com/
 
-## Usage
+# How It's Made:
+### Tech used: 
+EJS, CSS, JS, Node.js, Express, MongoDB, and Passport. 
 
-1. run `node server.js`
-2. Navigate to `localhost:9000`
 
-## Credit
+![tallo](tallo.png)
+![talloLogin](talloLogin.png)
+![talloSignup](talloSignup.png)
 
-Modified from Scotch.io's auth tutorial
+# Lessons Learned:
+
+
+# Examples:
+
+Take a look at these couple examples that I have in my own portfolio:
+
+Wu-Tang Generator: https://github.com/Kim-Flores/wu-tang-generator-bootcamp/tree/answer
+
+Palindrome Checker: https://github.com/Kim-Flores/node-palindrome-bootcamp/tree/answer
+
+Coin Flip: https://github.com/Kim-Flores/node-coin-flip-bootcamp/tree/answer
+
