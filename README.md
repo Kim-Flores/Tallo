@@ -7,8 +7,8 @@ Live Code: https://tallo.herokuapp.com/
 EJS, CSS, JS, Node.js, Express, MongoDB, and Passport. 
 
 
-![tallo](tallo.png)
-![talloLogin](talloLogin.png)
+![tallo](public/img/tallo.png)
+![talloLogin](public/img/talloLogin.png)
 ![talloSignup](talloSignup.png)
 
 # Lessons Learned:
